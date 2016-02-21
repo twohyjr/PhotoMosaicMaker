@@ -16,7 +16,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
         primaryStage.setTitle("Hack ISU Photo Mosaic Maker");
-        primaryStage.setScene(new Scene(root, 1592, 600));
+        primaryStage.setScene(new Scene(root, 1656, 900));
         primaryStage.show();
     }
 }

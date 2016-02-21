@@ -16,9 +16,11 @@ public class ImageLibrary implements Runnable{
     public LinkedList<CompImage> compImages = new LinkedList<CompImage>();
     private String directory = "";
     boolean rename = false;
+    private MainController controller;
 
-    public ImageLibrary(String directory){
+    public ImageLibrary(MainController controller,String directory){
         this.directory = directory;
+        this.controller = controller;
         renameImages();
         start();
     }
@@ -62,6 +64,8 @@ public class ImageLibrary implements Runnable{
             Image img = new Image("file:" + directory + "/" + i + ".jpg");
             if(img.getWidth() != 0){
                 library.add(img);
+
+
             }
         }
     }
@@ -70,7 +74,7 @@ public class ImageLibrary implements Runnable{
         for(int i = 0; i < library.size();i++){
             int width = (int)library.get(i).getWidth();
             int height = (int) library.get(i).getHeight();
-            CompImage img = new CompImage(library.get(i),width,height);
+            CompImage img = new CompImage(controller,library.get(i),width,height);
             if(img != null){
                 compImages.add(img);
             }

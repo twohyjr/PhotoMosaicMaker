@@ -19,9 +19,9 @@ public class ImageGrid{
     private Cell[][] cellGrid;
     private ImageLibrary compareLibrary;
     private boolean pixelize =false;
-    private Pane pixilizedView;
+    private MainController controller;
 
-    public ImageGrid(Pane mosaicImagePane,Pane pixilizedView, ImageLibrary library, Image mainImage, int rowCount, int columnCount,int cellWidth, int cellHeight){
+    public ImageGrid(MainController controller,Pane mosaicImagePane,ImageLibrary library, Image mainImage, int rowCount, int columnCount,int cellWidth, int cellHeight){
         this.mainImage = mainImage;
         this.rowCount = rowCount;
         this.columnCount = columnCount;
@@ -31,7 +31,8 @@ public class ImageGrid{
         this.mosaicPane = mosaicImagePane;
         this.compareLibrary = library;
         cellGrid = new Cell[columnCount][rowCount];
-        this.pixilizedView = pixilizedView;
+        this.controller = controller;
+
 
 //        System.out.println("Row Count:    " + this.rowCount);
 //        System.out.println("Column Count: "  + this.columnCount);
@@ -45,7 +46,7 @@ public class ImageGrid{
 
 
 
-    public void createViewImage(){
+    public void createViewImage(isPixel pixel){
 
 
 
@@ -56,6 +57,7 @@ public class ImageGrid{
                 cellGrid[point.x][point.y] = cell;
                 cell.createSubImage();
                 cell.createDisplayCell();
+
 
 
                     CompImage best = compareLibrary.compImages.get(0);
@@ -70,8 +72,13 @@ public class ImageGrid{
 
                     }
 
-                    displayImages(mosaicPane,bestImage,cell.cellLocation,cellWidth,cellHeight);
-                    displayImages(pixilizedView,cell);
+                if(pixel == isPixel.NO) {
+                    displayImages(mosaicPane, bestImage, cell.cellLocation, cellWidth, cellHeight);
+                }else{
+                    displayImages(mosaicPane,cell);
+                }
+
+
 
             }
         }

@@ -24,7 +24,7 @@ public class CompImage {
     public Color averageColor = null;
 
 
-    public CompImage(Image image, int imageWidth, int imageHeight){
+    public CompImage(MainController controller,Image image, int imageWidth, int imageHeight){
         this.image = image;
         this.imageWidth = imageWidth;
         this.imageHeight = imageHeight;

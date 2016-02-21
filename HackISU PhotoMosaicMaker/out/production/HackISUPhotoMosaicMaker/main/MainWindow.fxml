@@ -5,25 +5,28 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:id="backgroundPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1606.0" style="-fx-background-color: mediumpurple; -fx-border-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainController">
+<Pane fx:id="backgroundPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="942.0" prefWidth="1642.0" style="-fx-background-color: mediumpurple; -fx-border-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainController">
    <children>
-      <Pane fx:id="mainImagePane" layoutX="14.0" layoutY="14.0" prefHeight="512.0" prefWidth="512.0" style="-fx-background-color: dimgrey;">
+      <Pane fx:id="mainImagePane" layoutX="14.0" layoutY="14.0" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: dimgrey;">
          <children>
-            <ImageView fx:id="mainImageView" fitHeight="512.0" fitWidth="512.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="mainImageView" fitHeight="800.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </Pane>
-      <Pane fx:id="mosaicImagePane" layoutX="540.0" layoutY="14.0" prefHeight="512.0" prefWidth="512.0" style="-fx-background-color: dimgrey;" />
-      <Button fx:id="loadImageButton" layoutX="405.0" layoutY="530.0" mnemonicParsing="false" onAction="#loadImageButtonPressed" text="Load Image" />
-      <Button fx:id="createMosaicButton" layoutX="405.0" layoutY="563.0" mnemonicParsing="false" onAction="#createMosaicButtonPressed" text="Create Mosaic" />
-      <TextField fx:id="rowCountField" layoutX="82.0" layoutY="530.0" prefHeight="27.0" prefWidth="50.0" text="16" />
-      <TextField fx:id="columnCountField" layoutX="82.0" layoutY="563.0" prefHeight="27.0" prefWidth="50.0" text="32" />
-      <TextField fx:id="cellWidthField" layoutX="301.0" layoutY="530.0" prefHeight="27.0" prefWidth="50.0" text="16" />
-      <TextField fx:id="cellHeightField" layoutX="301.0" layoutY="563.0" prefHeight="27.0" prefWidth="50.0" text="32" />
-      <Label layoutX="35.0" layoutY="535.0" text="Rows" />
-      <Label layoutX="14.0" layoutY="568.0" text="Columns" />
-      <Label layoutX="218.0" layoutY="568.0" text="Cell Height" />
-      <Label layoutX="220.0" layoutY="538.0" text="Cell Width" />
-      <Button layoutX="745.0" layoutY="550.0" mnemonicParsing="false" onAction="#loadLibraryButtonPressed" text="Load Library" />
-      <Pane fx:id="pixelizedView" layoutX="1066.0" layoutY="14.0" prefHeight="512.0" prefWidth="512.0" style="-fx-background-color: dimgrey;" />
+      <Pane fx:id="mosaicImagePane" layoutX="828.0" layoutY="14.0" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: dimgrey;" />
+      <Button fx:id="loadImageButton" layoutX="28.0" layoutY="823.0" mnemonicParsing="false" onAction="#loadImageButtonPressed" text="Load Image" />
+      <Button fx:id="createMosaicButton" layoutX="599.0" layoutY="832.0" mnemonicParsing="false" onAction="#createMosaicButtonPressed" prefHeight="54.0" prefWidth="215.0" text="Create Photo Mosaic" />
+      <TextField fx:id="rowCountField" layoutX="234.0" layoutY="831.0" prefHeight="27.0" prefWidth="50.0" text="20" />
+      <TextField fx:id="columnCountField" layoutX="234.0" layoutY="864.0" prefHeight="27.0" prefWidth="50.0" text="20" />
+      <TextField fx:id="cellWidthField" layoutX="389.0" layoutY="828.0" prefHeight="27.0" prefWidth="50.0" text="40" />
+      <TextField fx:id="cellHeightField" layoutX="389.0" layoutY="861.0" prefHeight="27.0" prefWidth="50.0" text="40" />
+      <Label layoutX="187.0" layoutY="836.0" text="Rows" />
+      <Label layoutX="166.0" layoutY="869.0" text="Columns" />
+      <Label layoutX="306.0" layoutY="866.0" text="Cell Height" />
+      <Label layoutX="308.0" layoutY="836.0" text="Cell Width" />
+      <Button layoutX="25.0" layoutY="861.0" mnemonicParsing="false" onAction="#loadLibraryButtonPressed" text="Load Library" />
+      <Button layoutX="828.0" layoutY="832.0" mnemonicParsing="false" onAction="#createPixelizedView" prefHeight="54.0" prefWidth="215.0" text="Create Pixel Map" />
+      <Button layoutX="1360.0" layoutY="859.0" mnemonicParsing="false" onAction="#decreaseCellCount" prefHeight="27.0" prefWidth="200.0" text="DOWN" />
+      <Button layoutX="1360.0" layoutY="821.0" mnemonicParsing="false" onAction="#increaseCellCount" prefHeight="27.0" prefWidth="200.0" text="UP" />
+      <ProgressBar fx:id="bar" layoutX="599.0" layoutY="908.0" prefHeight="20.0" prefWidth="442.0" progress="0.0" />
    </children>
 </Pane>
